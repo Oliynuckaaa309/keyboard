@@ -1,0 +1,51 @@
+
+.input_text{
+    height: 150px;
+    width: 550px;
+    margin: 40px auto;
+}
+#input_area{
+    background-color: white;
+    height: 150px;
+    width: 550px;
+    border-radius: 12px;
+    resize: none;
+}
+
+.block{
+    width: 550px;
+    margin: 0 auto;
+}
+.block_1{
+    margin-top: -25px;
+    display: flex;
+    justify-content: space-between;
+}
+.number, .letter, .letter_1, .letter_2{
+    width:35px;
+    height: 40px;
+    background-color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 4px;
+}
+.back, .tab, .cap, .lock{
+    width:70px ;
+}
+.shift{
+    width: 88px;
+}
+
+
+.block_2, .block_3, .block_4{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.spaceBar{
+    width: 550px;
+    height: 40px;
+    margin-top: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
