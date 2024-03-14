@@ -4,7 +4,7 @@ let capsLockIsOn = false;
 
 document.addEventListener("keydown", (event) => {
   event.preventDefault();
-  let keyDiv = document.getElementById(getKeyDivId(event.key));
+  let keyDiv = document.getElementById(getKeyDivId(event));
   if (!keyDiv){
     return;
   }
@@ -32,11 +32,18 @@ document.addEventListener("keydown", (event) => {
 
 document.addEventListener("keyup", function (event) {
   if(event.key === "CapsLock"){return;}
-  let keyDiv = document.getElementById(getKeyDivId(event.key));
+  if(event.key === "Shift"){
+    let lshiftDiv = document.getElementById("lshift");
+    let rshiftDiv = document.getElementById("rshift");
+    lshiftDiv.style.backgroundColor = 'white';
+    rshiftDiv.style.backgroundColor = 'white';
+  }
+  let keyDiv = document.getElementById(getKeyDivId(event));
   keyDiv = keyDiv.style.backgroundColor = 'white';
 });
 
-function getKeyDivId(key) {
+function getKeyDivId(event) {
+  key = event.key;
   switch(key) {
     case "~": return "`";
     case "!": return "1";
@@ -59,6 +66,9 @@ function getKeyDivId(key) {
     case "<": return ",";
     case ">": return ".";
     case "?": return "/";
+    case "Shift": {
+      return event.location === KeyboardEvent.DOM_KEY_LOCATION_LEFT? "lshift" : "rshift"
+    };
     default: return key.toLowerCase();
   }
 }
